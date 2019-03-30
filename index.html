@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>vue-source-analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="app">
+      <button type="button" @click="click">Click Me!</button>
+      <!-- <input type="text" ref="inputField" :value="test" @input="doInput"> -->
+      <div>{{test}}</div>
+    </div>
+    <script src="./vue-1.0.1.js"></script>
+    <script>
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          test: 'hello world'
+        },
+        // events: {
+        //   'hook:created': function () {
+        //     console.log('created!')
+        //   },
+        //   greeting: function (msg) {
+        //     console.log(msg)
+        //   },
+        //   // can also use a string for methods
+        //   bye: 'sayGoodbye'
+        // },
+        methods: {
+          click (val) {
+            this.test = 'clicked'
+          }
+        }
+      })
+      console.log('Instance:', vm)
+    </script>
+  </body>
+</html>
